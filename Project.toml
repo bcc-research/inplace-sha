@@ -1,5 +1,5 @@
-name = "SHA"
-uuid = "ea8e919c-243c-51af-8825-aaa63cd721ce"
+name = "BCCSHA"
+uuid = "aa8e919c-243c-51af-8825-aaa63cd721ce"
 authors = ["Elliot Saba <staticfloat@gmail.com>"]
 version = "0.7.0"
 

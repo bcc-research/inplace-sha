@@ -31,10 +31,10 @@ julia> digest!(ctx)
  0xe3
  0x56
 """
-module SHA
+module BCCSHA
 
 # Export convenience functions, context types, update!() and digest!() functions
-export sha1, SHA1_CTX, update!, digest!
+export sha1, SHA1_CTX, update!, digest!, digest_inplace!
 export sha224, sha256, sha384, sha512
 export sha2_224, sha2_256, sha2_384, sha2_512
 export sha2_512_224, sha2_512_256

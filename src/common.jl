@@ -122,3 +122,21 @@ function digest!(context::T) where T<:SHA_CTX
     # Return the digest
     return reinterpret(UInt8, context.state)[1:digestlen(T)]
 end
+
+function digest_inplace!(dst_ptr::Ptr{UInt8}, context::T) where T<:SHA_CTX
+    if !context.used
+        pad_remainder!(context)
+        # Store the length of the input data (in bits) at the end of the padding
+        bitcount_idx = div(short_blocklen(T), sizeof(context.bytecount)) + 1
+        pbuf = Ptr{typeof(context.bytecount)}(pointer(context.buffer))
+        unsafe_store!(pbuf, bswap(context.bytecount * 8), bitcount_idx)
+
+        # Final transform:
+        transform!(context)
+        bswap!(context.state)
+        context.used = true
+    end
+
+    src_ptr = Ptr{UInt8}(pointer(context.state))
+    Base.unsafe_copyto!(dst_ptr, src_ptr, digestlen(T))
+end
