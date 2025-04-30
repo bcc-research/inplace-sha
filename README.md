@@ -1,4 +1,4 @@
-#NOTE
+# NOTE
 This package is a fork of SHA.jl in which we add inplace sha hashing. We plan to upstream this version to the main repository: https://github.com/JuliaCrypto/SHA.jl
 
 # SHA
