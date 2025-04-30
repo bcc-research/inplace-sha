@@ -1,4 +1,9 @@
+#NOTE
+This package is a fork of SHA.jl in which we add inplace sha hashing. We plan to upstream this version to the main repository: https://github.com/JuliaCrypto/SHA.jl
+
 # SHA
+
+
 
 [![Build Status](https://github.com/JuliaCrypto/SHA.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/JuliaCrypto/SHA.jl/actions/workflows/CI.yml)
 [![codecov.io](https://codecov.io/gh/JuliaCrypto/SHA.jl/branch/master/graph/badge.svg)](https://app.codecov.io/gh/JuliaCrypto/SHA.jl)
